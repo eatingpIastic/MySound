@@ -1,96 +1,102 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: radial-gradient(ellipse at top left, #111, #000);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(to bottom right, #0b0b0d, #111);
   color: white;
   text-align: center;
+  padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
+/* Header */
 .hero {
-  margin-top: 60px;
+  padding-top: 60px;
 }
 
-.glow {
+.apple-glow {
   font-size: 3em;
-  font-weight: bold;
-  background: linear-gradient(90deg, #ffffff, #00c6ff);
+  background: linear-gradient(90deg, #fff, #0ff, #09f);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  animation: shine 3s linear infinite;
+  animation: glowShift 5s linear infinite;
 }
 
-.subtitle {
-  font-size: 1.2em;
-  opacity: 0.7;
-  margin-top: -10px;
+@keyframes glowShift {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
-.upload-area {
-  margin: 30px 0;
+/* Upload Section */
+.upload-section {
+  margin: 30px auto;
 }
 
-.upload-label {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 12px 24px;
-  border-radius: 10px;
-  cursor: pointer;
+.custom-upload {
   display: inline-block;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  cursor: pointer;
   transition: 0.3s;
+  border: 1px solid #333;
+  backdrop-filter: blur(6px);
+  font-weight: 500;
 }
 
-.upload-label:hover {
-  background: rgba(255, 255, 255, 0.15);
+.custom-upload:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-#fileInput {
+.custom-upload input {
   display: none;
 }
 
+.hint {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* Soundboard Buttons */
 .soundboard {
-  margin: 20px auto;
+  margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  max-width: 800px;
-  padding: 0 20px;
+  gap: 16px;
+  max-width: 1000px;
+  padding: 20px;
 }
 
-button.sound-btn {
-  padding: 15px 25px;
-  font-size: 1em;
+.sound-btn {
+  padding: 14px 26px;
+  font-size: 1rem;
   border: none;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
   color: white;
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 128, 255, 0.15);
+  transition: all 0.2s ease;
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.15);
   cursor: pointer;
 }
 
-button.sound-btn:hover {
+.sound-btn:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 128, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.4);
 }
 
+/* Footer */
 footer {
-  margin-bottom: 20px;
-  opacity: 0.5;
-  font-size: 0.9em;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 200%;
-  }
+  margin: 30px 0 20px;
+  font-size: 0.85em;
+  color: #888;
 }
