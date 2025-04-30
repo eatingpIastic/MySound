@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎵 Soundboard</title>
+  <title>🍏 Intelligent Soundboard</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="hero">
-    <h1 class="glow">Intelligent Soundboard</h1>
-    <p class="subtitle">Import your own sounds</p>
-  </div>
+  <header class="hero">
+    <h1 class="apple-glow">Intelligent Soundboard</h1>
+    <p>Inspired by Apple Intelligence</p>
+  </header>
 
-  <div class="upload-area">
-    <label for="fileInput" class="upload-label">📁 Upload MP3/WAV files</label>
-    <input type="file" id="fileInput" accept=".mp3,.wav" multiple />
-  </div>
+  <section class="upload-section">
+    <label class="custom-upload">
+      📁 Upload MP3/WAV Files
+      <input type="file" id="fileInput" accept=".mp3,.wav" multiple />
+    </label>
+    <p class="hint">Upload as many as you want — each file becomes a button!</p>
+  </section>
 
-  <div class="soundboard" id="soundboard">
-    <!-- Buttons for sounds will be created dynamically -->
-  </div>
+  <main id="soundboard" class="soundboard">
+    <!-- Dynamically created sound buttons appear here -->
+  </main>
 
   <footer>
-    <p>Made by You 🍏</p>
+    <p>🍏 Made with intelligence. Yours.</p>
   </footer>
 
   <script src="js/script.js"></script>
